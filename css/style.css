@@ -1,0 +1,2498 @@
+/* =====================================================
+   AFDHOL COFFEE SHOP - STYLE.CSS
+   Tahap 2: Variabel, Navbar, Hero, Highlight, Footer
+   ===================================================== */
+
+/* ---------- VARIABEL WARNA & FONT ---------- */
+:root {
+    --khaikal_black: #0d0806;
+    --khaikal_dark_brown: #1a0f0a;
+    --khaikal_coffee: #4a2c1a;
+    --khaikal_coffee_light: #6b4226;
+    --khaikal_gold: #c8a97e;
+    --khaikal_cream: #f5ecd7;
+    --khaikal_beige: #d9c7a7;
+    --khaikal_font_heading: 'Playfair Display', Georgia, serif;
+    --khaikal_font_body: 'Montserrat', Arial, sans-serif;
+}
+
+/* ---------- RESET & DASAR ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#khaikal_body {
+    background-color: var(--khaikal_dark_brown);
+    color: var(--khaikal_cream);
+    font-family: var(--khaikal_font_body);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.khaikal_container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.khaikal_gold_text {
+    color: var(--khaikal_gold);
+    font-style: italic;
+}
+
+/* ---------- HEADER & NAVBAR ---------- */
+#khaikal_header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: linear-gradient(to bottom, rgba(13, 8, 6, 0.85), rgba(13, 8, 6, 0));
+    transition: background 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+}
+
+#khaikal_header.khaikal_scrolled {
+    background: rgba(13, 8, 6, 0.96);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+.khaikal_navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: padding 0.4s ease;
+}
+
+#khaikal_header.khaikal_scrolled .khaikal_navbar {
+    padding: 12px 24px;
+}
+
+.khaikal_logo_link {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.khaikal_logo_text {
+    font-family: var(--khaikal_font_heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: var(--khaikal_gold);
+}
+
+.khaikal_logo_sub {
+    font-size: 0.62rem;
+    letter-spacing: 6px;
+    color: var(--khaikal_cream);
+    font-weight: 400;
+}
+
+.khaikal_nav_menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.khaikal_nav_link {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--khaikal_cream);
+    position: relative;
+    padding: 6px 0;
+    transition: color 0.3s ease;
+}
+
+.khaikal_nav_link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--khaikal_gold);
+    transition: width 0.3s ease;
+}
+
+.khaikal_nav_link:hover,
+.khaikal_nav_link.khaikal_active {
+    color: var(--khaikal_gold);
+}
+
+.khaikal_nav_link:hover::after,
+.khaikal_nav_link.khaikal_active::after {
+    width: 100%;
+}
+
+.khaikal_nav_cta {
+    border: 1px solid var(--khaikal_gold);
+    padding: 8px 20px;
+    color: var(--khaikal_gold);
+}
+
+.khaikal_nav_cta::after {
+    display: none;
+}
+
+.khaikal_nav_cta:hover {
+    background-color: var(--khaikal_gold);
+    color: var(--khaikal_black);
+}
+
+/* ---------- HAMBURGER ---------- */
+.khaikal_hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 32px;
+    height: 24px;
+    position: relative;
+    z-index: 1100;
+}
+
+.khaikal_hamburger_line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--khaikal_gold);
+    transition: transform 0.3s ease, opacity 0.3s ease, top 0.3s ease;
+}
+
+.khaikal_hamburger_line:nth-child(1) { top: 2px; }
+.khaikal_hamburger_line:nth-child(2) { top: 11px; }
+.khaikal_hamburger_line:nth-child(3) { top: 20px; }
+
+.khaikal_hamburger.khaikal_open .khaikal_hamburger_line:nth-child(1) {
+    top: 11px;
+    transform: rotate(45deg);
+}
+
+.khaikal_hamburger.khaikal_open .khaikal_hamburger_line:nth-child(2) {
+    opacity: 0;
+}
+
+.khaikal_hamburger.khaikal_open .khaikal_hamburger_line:nth-child(3) {
+    top: 11px;
+    transform: rotate(-45deg);
+}
+
+/* ---------- HERO ---------- */
+#khaikal_hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 24px 80px;
+    background:
+        radial-gradient(circle at 70% 30%, rgba(200, 169, 126, 0.18), transparent 50%),
+        linear-gradient(135deg, var(--khaikal_black) 0%, var(--khaikal_coffee) 100%);
+    overflow: hidden;
+}
+
+.khaikal_hero_overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(13, 8, 6, 0.55);
+    z-index: 1;
+}
+
+.khaikal_hero_content {
+    position: relative;
+    z-index: 2;
+    max-width: 820px;
+}
+
+.khaikal_hero_eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--khaikal_gold);
+    margin-bottom: 20px;
+}
+
+.khaikal_hero_title {
+    font-family: var(--khaikal_font_heading);
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: var(--khaikal_cream);
+}
+
+.khaikal_hero_tagline {
+    font-size: 1.05rem;
+    color: var(--khaikal_beige);
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.khaikal_hero_buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ---------- TOMBOL ---------- */
+.khaikal_btn {
+    display: inline-block;
+    padding: 14px 34px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid var(--khaikal_gold);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.khaikal_btn_primary {
+    background-color: var(--khaikal_gold);
+    color: var(--khaikal_black);
+}
+
+.khaikal_btn_primary:hover {
+    background-color: transparent;
+    color: var(--khaikal_gold);
+}
+
+.khaikal_btn_outline {
+    background-color: transparent;
+    color: var(--khaikal_cream);
+}
+
+.khaikal_btn_outline:hover {
+    background-color: var(--khaikal_gold);
+    color: var(--khaikal_black);
+}
+
+/* ---------- SCROLL INDICATOR ---------- */
+.khaikal_scroll_down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.khaikal_scroll_text {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--khaikal_gold);
+}
+
+.khaikal_scroll_line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--khaikal_gold), transparent);
+    animation: khaikal_scroll_pulse 2s ease-in-out infinite;
+}
+
+@keyframes khaikal_scroll_pulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.6); transform-origin: top; }
+    50% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+}
+
+/* ---------- SECTION UMUM ---------- */
+.khaikal_section {
+    padding: 110px 0;
+    background-color: var(--khaikal_dark_brown);
+}
+
+.khaikal_section_eyebrow {
+    text-align: center;
+    font-size: 0.75rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--khaikal_gold);
+    margin-bottom: 14px;
+}
+
+.khaikal_section_title {
+    text-align: center;
+    font-family: var(--khaikal_font_heading);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 600;
+    margin-bottom: 60px;
+}
+
+/* ---------- HIGHLIGHT CARDS ---------- */
+.khaikal_highlight_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.khaikal_highlight_card {
+    background-color: rgba(74, 44, 26, 0.35);
+    border: 1px solid rgba(200, 169, 126, 0.25);
+    padding: 42px 32px;
+    transition: transform 0.4s ease, border-color 0.4s ease, background-color 0.4s ease;
+}
+
+.khaikal_highlight_card:hover {
+    transform: translateY(-8px);
+    border-color: var(--khaikal_gold);
+    background-color: rgba(74, 44, 26, 0.6);
+}
+
+.khaikal_highlight_number {
+    display: block;
+    font-family: var(--khaikal_font_heading);
+    font-size: 2.6rem;
+    color: var(--khaikal_gold);
+    opacity: 0.6;
+    margin-bottom: 12px;
+}
+
+.khaikal_highlight_card h3 {
+    font-family: var(--khaikal_font_heading);
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.khaikal_highlight_card p {
+    color: var(--khaikal_beige);
+    font-size: 0.92rem;
+    margin-bottom: 20px;
+}
+
+.khaikal_card_link {
+    font-size: 0.78rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--khaikal_gold);
+    font-weight: 500;
+}
+
+.khaikal_card_link:hover {
+    color: var(--khaikal_cream);
+}
+
+/* ---------- ANIMASI SCROLL (REVEAL) ---------- */
+.khaikal_reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.khaikal_reveal.khaikal_visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------- FOOTER ---------- */
+#khaikal_footer {
+    background-color: var(--khaikal_black);
+    border-top: 1px solid rgba(200, 169, 126, 0.25);
+    padding: 70px 0 30px;
+}
+
+.khaikal_footer_top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.khaikal_footer_brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.khaikal_footer_brand p {
+    margin-top: 16px;
+    color: var(--khaikal_beige);
+    font-size: 0.9rem;
+}
+
+.khaikal_footer_links h4 {
+    font-family: var(--khaikal_font_heading);
+    color: var(--khaikal_gold);
+    font-size: 1.05rem;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.khaikal_footer_links a {
+    display: block;
+    font-size: 0.88rem;
+    color: var(--khaikal_beige);
+    margin-bottom: 8px;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.khaikal_footer_links a:hover {
+    color: var(--khaikal_gold);
+    padding-left: 6px;
+}
+
+/* Identitas pembuat: rapi, kecil, tidak mengganggu brand */
+.khaikal_footer_credit {
+    border-top: 1px solid rgba(200, 169, 126, 0.18);
+    padding-top: 26px;
+    text-align: center;
+}
+
+.khaikal_credit_main {
+    font-size: 0.78rem;
+    color: var(--khaikal_beige);
+    font-style: italic;
+    margin-bottom: 6px;
+}
+
+.khaikal_credit_detail {
+    font-size: 0.74rem;
+    letter-spacing: 1px;
+    color: var(--khaikal_gold);
+    margin-bottom: 6px;
+}
+
+.khaikal_credit_copy {
+    font-size: 0.7rem;
+    color: rgba(217, 199, 167, 0.55);
+}
+
+/* ---------- RESPONSIVE: TABLET & HP ---------- */
+@media (max-width: 992px) {
+    .khaikal_highlight_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .khaikal_footer_top {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .khaikal_footer_brand {
+        grid-column: 1 / -1;
+    }
+
+    .khaikal_hamburger {
+        display: block;
+    }
+
+    .khaikal_nav_menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(320px, 80vw);
+        height: 100vh;
+        background-color: var(--khaikal_black);
+        flex-direction: column;
+        justify-content: center;
+        gap: 28px;
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.6);
+        transition: right 0.4s ease;
+        z-index: 1050;
+    }
+
+    .khaikal_nav_menu.khaikal_open {
+        right: 0;
+    }
+
+    .khaikal_nav_link {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .khaikal_section {
+        padding: 80px 0;
+    }
+
+    .khaikal_footer_top {
+        grid-template-columns: 1fr;
+    }
+
+    .khaikal_btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .khaikal_hero_buttons {
+        flex-direction: column;
+    }
+}
+/* =====================================================
+   TAHAP 2B: LOGO (tempel di paling bawah file)
+   ===================================================== */
+
+/* Logo di navbar: lambang di kiri, teks di kanan */
+.khaikal_logo_link {
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+}
+
+.khaikal_logo_img {
+    height: 46px;
+    width: auto;
+    display: block;
+    transition: height 0.4s ease, transform 0.4s ease;
+}
+
+#khaikal_header.khaikal_scrolled .khaikal_logo_img {
+    height: 38px;
+}
+
+.khaikal_logo_link:hover .khaikal_logo_img {
+    transform: scale(1.06);
+}
+
+.khaikal_logo_wrap {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+/* Logo besar di hero, di atas headline */
+.khaikal_hero_logo {
+    display: block;
+    height: 96px;
+    width: auto;
+    margin: 0 auto 26px;
+    filter: drop-shadow(0 6px 24px rgba(240, 160, 32, 0.35));
+}
+
+/* Logo di footer */
+.khaikal_footer_logo {
+    height: 54px;
+    width: auto;
+    margin-bottom: 14px;
+    align-self: flex-start;
+}
+
+@media (max-width: 576px) {
+    .khaikal_logo_img {
+        height: 38px;
+    }
+
+    .khaikal_hero_logo {
+        height: 76px;
+    }
+}
+
+/* =====================================================
+   TAHAP 3: VIDEO BACKGROUND HERO (tempel di paling bawah)
+   ===================================================== */
+
+.khaikal_hero_video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Overlay gelap bergradasi: gelap di atas (agar navbar jelas)
+   dan di bawah (agar transisi ke section berikutnya halus) */
+.khaikal_hero_overlay {
+    background: linear-gradient(
+        to bottom,
+        rgba(13, 8, 6, 0.78) 0%,
+        rgba(13, 8, 6, 0.50) 40%,
+        rgba(13, 8, 6, 0.88) 100%
+    );
+}
+
+/* Bayangan tipis agar teks tetap terbaca di atas video yang terang */
+.khaikal_hero_title,
+.khaikal_hero_tagline,
+.khaikal_hero_eyebrow {
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
+}
+/* =====================================================
+   TAHAP 4: SECTION ATMOSPHERE (tempel di paling bawah)
+   ===================================================== */
+
+.khaikal_atmosphere {
+    padding: 110px 0;
+    background-color: var(--khaikal_black);
+}
+
+.khaikal_atmo_grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 28px;
+    align-items: stretch;
+}
+
+.khaikal_atmo_side {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.khaikal_atmo_text {
+    padding: 8px 0;
+}
+
+.khaikal_atmo_eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--khaikal_gold);
+    margin-bottom: 14px;
+}
+
+.khaikal_atmo_title {
+    font-family: var(--khaikal_font_heading);
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 16px;
+}
+
+.khaikal_atmo_desc {
+    color: var(--khaikal_beige);
+    font-size: 0.95rem;
+}
+
+.khaikal_atmo_photo {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(200, 169, 126, 0.25);
+    background-color: var(--khaikal_dark_brown);
+}
+
+.khaikal_atmo_photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.9s ease;
+}
+
+.khaikal_atmo_photo:hover img {
+    transform: scale(1.05);
+}
+
+.khaikal_atmo_photo_main {
+    min-height: 540px;
+}
+
+.khaikal_atmo_photo_side {
+    flex: 1;
+    min-height: 260px;
+}
+
+.khaikal_atmo_caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 40px 20px 16px;
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    color: var(--khaikal_cream);
+    background: linear-gradient(to top, rgba(13, 8, 6, 0.85), rgba(13, 8, 6, 0));
+}
+
+@media (max-width: 992px) {
+    .khaikal_atmo_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .khaikal_atmo_photo_main {
+        min-height: 360px;
+    }
+
+    .khaikal_atmo_photo_side {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .khaikal_atmosphere {
+        padding: 80px 0;
+    }
+
+    .khaikal_atmo_photo_main {
+        min-height: 280px;
+    }
+}
+/* =====================================================
+   TAHAP 5: HALAMAN ABOUT US (tempel di paling bawah)
+   ===================================================== */
+
+/* ---------- Header halaman (dipakai ulang di halaman lain) ---------- */
+.khaikal_page_hero {
+    position: relative;
+    min-height: 62vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 150px 24px 70px;
+    overflow: hidden;
+    background-color: var(--khaikal_black);
+}
+
+.khaikal_page_hero_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+}
+
+.khaikal_page_hero_overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(13, 8, 6, 0.85) 0%,
+        rgba(13, 8, 6, 0.55) 45%,
+        rgba(26, 15, 10, 1) 100%
+    );
+}
+
+.khaikal_page_hero_content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.khaikal_breadcrumb {
+    font-size: 0.74rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--khaikal_gold);
+    margin-bottom: 14px;
+}
+
+.khaikal_breadcrumb a:hover {
+    color: var(--khaikal_cream);
+}
+
+.khaikal_page_title {
+    font-family: var(--khaikal_font_heading);
+    font-size: clamp(2.6rem, 7vw, 4.8rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 14px;
+}
+
+.khaikal_page_subtitle {
+    font-size: 1.05rem;
+    color: var(--khaikal_beige);
+    max-width: 560px;
+}
+
+/* ---------- Cerita ---------- */
+.khaikal_about_story {
+    padding: 110px 0;
+    background-color: var(--khaikal_dark_brown);
+}
+
+.khaikal_story_grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.khaikal_section_eyebrow.khaikal_left {
+    text-align: left;
+}
+
+.khaikal_story_title {
+    font-family: var(--khaikal_font_heading);
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 24px;
+}
+
+.khaikal_story_text p {
+    color: var(--khaikal_beige);
+    margin-bottom: 16px;
+    font-size: 0.97rem;
+}
+
+.khaikal_story_photo {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    min-height: 520px;
+    border: 1px solid rgba(200, 169, 126, 0.25);
+}
+
+.khaikal_story_photo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.9s ease;
+}
+
+.khaikal_story_photo:hover img {
+    transform: scale(1.05);
+}
+
+/* ---------- Apa yang kami hadirkan ---------- */
+.khaikal_about_offer {
+    padding: 110px 0;
+    background-color: var(--khaikal_black);
+}
+
+.khaikal_offer_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 24px;
+}
+
+.khaikal_offer_item {
+    padding: 28px 24px;
+    border-top: 2px solid var(--khaikal_gold);
+    background-color: rgba(74, 44, 26, 0.25);
+}
+
+.khaikal_offer_item h3 {
+    font-family: var(--khaikal_font_heading);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--khaikal_cream);
+}
+
+.khaikal_offer_item p {
+    color: var(--khaikal_beige);
+    font-size: 0.9rem;
+}
+
+/* ---------- Kartu identitas pembuat ---------- */
+.khaikal_maker_section {
+    padding: 90px 0;
+}
+
+.khaikal_maker_card {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 36px 34px;
+    text-align: center;
+    border: 1px solid rgba(200, 169, 126, 0.35);
+    background-color: rgba(13, 8, 6, 0.55);
+}
+
+.khaikal_maker_label {
+    font-size: 0.72rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--khaikal_gold);
+    margin-bottom: 12px;
+}
+
+.khaikal_maker_note {
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--khaikal_beige);
+    margin-bottom: 22px;
+}
+
+.khaikal_maker_list {
+    text-align: left;
+}
+
+.khaikal_maker_row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 0;
+    border-top: 1px solid rgba(200, 169, 126, 0.18);
+    font-size: 0.9rem;
+}
+
+.khaikal_maker_row dt {
+    color: var(--khaikal_gold);
+    letter-spacing: 1px;
+}
+
+.khaikal_maker_row dd {
+    color: var(--khaikal_cream);
+    text-align: right;
+}
+
+/* ---------- Ajakan di bagian bawah ---------- */
+.khaikal_cta_band {
+    padding: 100px 0;
+    text-align: center;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(200, 169, 126, 0.15), transparent 60%),
+        var(--khaikal_coffee);
+}
+
+.khaikal_cta_title {
+    font-family: var(--khaikal_font_heading);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: 12px;
+}
+
+.khaikal_cta_text {
+    color: var(--khaikal_beige);
+    margin-bottom: 32px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 992px) {
+    .khaikal_story_grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .khaikal_story_photo {
+        min-height: 380px;
+    }
+}
+
+@media (max-width: 576px) {
+    .khaikal_page_hero {
+        min-height: 52vh;
+        padding: 130px 24px 50px;
+    }
+
+    .khaikal_about_story,
+    .khaikal_about_offer,
+    .khaikal_cta_band {
+        padding: 80px 0;
+    }
+
+    .khaikal_story_photo {
+        min-height: 300px;
+    }
+
+    .khaikal_maker_card {
+        padding: 28px 20px;
+    }
+
+    .khaikal_maker_row {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .khaikal_maker_row dd {
+        text-align: left;
+    }
+}
+/* =====================================================
+   TAHAP 6: HALAMAN COFFEE MENU
+   ===================================================== */
+
+.khaikal_menu_section {
+    padding: 90px 0 60px;
+    background-color: var(--khaikal_dark_brown);
+}
+
+/* ---------- Filter (dipakai ulang di Coffee Store) ---------- */
+.khaikal_filter_bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 70px;
+}
+
+.khaikal_filter_btn {
+    background: transparent;
+    border: 1px solid rgba(200, 169, 126, 0.45);
+    color: var(--khaikal_cream);
+    padding: 11px 24px;
+    font-family: var(--khaikal_font_body);
+    font-size: 0.74rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.khaikal_filter_btn:hover,
+.khaikal_filter_btn.khaikal_filter_active {
+    background-color: var(--khaikal_gold);
+    border-color: var(--khaikal_gold);
+    color: var(--khaikal_black);
+}
+
+.khaikal_hidden {
+    display: none !important;
+}
+
+/* ---------- Kelompok menu ---------- */
+.khaikal_menu_group {
+    margin-bottom: 90px;
+}
+
+.khaikal_menu_group_head {
+    margin-bottom: 36px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(200, 169, 126, 0.25);
+}
+
+.khaikal_menu_group_eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--khaikal_gold);
+    margin-bottom: 6px;
+}
+
+.khaikal_menu_group_title {
+    font-family: var(--khaikal_font_heading);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 600;
+}
+
+.khaikal_menu_group_body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+/* Kartu menu: 2 kolom */
+.khaikal_menu_list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.khaikal_menu_subtitle {
+    grid-column: 1 / -1;
+    margin-top: 10px;
+    font-family: var(--khaikal_font_body);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--khaikal_gold);
+}
+
+.khaikal_menu_item {
+    padding: 22px 26px;
+    border-left: 2px solid var(--khaikal_gold);
+    background-color: rgba(74, 44, 26, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.khaikal_menu_item:hover {
+    background-color: rgba(74, 44, 26, 0.55);
+    transform: translateX(6px);
+}
+
+.khaikal_menu_item_name {
+    font-family: var(--khaikal_font_heading);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.khaikal_menu_tag {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 2px 10px;
+    font-family: var(--khaikal_font_body);
+    font-size: 0.66rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--khaikal_gold);
+    border: 1px solid rgba(200, 169, 126, 0.5);
+    vertical-align: middle;
+}
+
+.khaikal_menu_item_desc {
+    color: var(--khaikal_beige);
+    font-size: 0.92rem;
+}
+
+.khaikal_menu_note {
+    grid-column: 1 / -1;
+    padding: 14px 4px;
+    font-size: 0.9rem;
+    color: var(--khaikal_beige);
+}
+
+.khaikal_menu_note strong {
+    color: var(--khaikal_gold);
+    font-weight: 500;
+}
+
+/* ---------- Poster: berjajar di bawah kartu ---------- */
+.khaikal_menu_posters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.khaikal_menu_poster {
+    width: 280px;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid rgba(200, 169, 126, 0.3);
+    background-color: var(--khaikal_black);
+}
+
+.khaikal_menu_poster img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.8s ease;
+}
+
+.khaikal_menu_poster:hover img {
+    transform: scale(1.04);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .khaikal_menu_list {
+        grid-template-columns: 1fr;
+    }
+
+    .khaikal_menu_posters {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .khaikal_menu_section {
+        padding: 70px 0 40px;
+    }
+
+    .khaikal_filter_btn {
+        padding: 9px 16px;
+        font-size: 0.68rem;
+    }
+
+    .khaikal_menu_poster {
+        width: min(100%, 320px);
+    }
+
+    .khaikal_menu_item {
+        padding: 18px 18px;
+    }
+}
+/* =====================================================
+   TAHAP 6B: PERCANTIK HALAMAN MENU (tempel di paling bawah)
+   ===================================================== */
+
+.khaikal_menu_section {
+    padding: 80px 0 40px;
+}
+
+.khaikal_menu_group {
+    margin-bottom: 110px;
+}
+
+/* ---------- Judul kategori: di tengah, bergaris emas ---------- */
+.khaikal_menu_group_head {
+    text-align: center;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 56px;
+}
+
+.khaikal_menu_group_head::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 1px;
+    background-color: var(--khaikal_gold);
+    margin: 22px auto 0;
+}
+
+.khaikal_menu_group_title {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+}
+
+/* ---------- Dua kolom: daftar menu kiri, poster kanan ---------- */
+.khaikal_menu_group_body {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 70px;
+    align-items: start;
+}
+
+/* ---------- Daftar menu: gaya menu restoran, tanpa kotak ---------- */
+.khaikal_menu_list {
+    display: block;
+}
+
+.khaikal_menu_item {
+    padding: 20px 0;
+    border-left: none;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(200, 169, 126, 0.18);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.khaikal_menu_item:hover {
+    background-color: transparent;
+    transform: none;
+}
+
+.khaikal_menu_item_name {
+    font-size: 1.25rem;
+    margin-bottom: 6px;
+    transition: color 0.3s ease;
+}
+
+.khaikal_menu_item:hover .khaikal_menu_item_name {
+    color: var(--khaikal_gold);
+}
+
+.khaikal_menu_item_desc {
+    font-size: 0.88rem;
+    max-width: 640px;
+}
+
+.khaikal_menu_subtitle {
+    display: block;
+    margin: 44px 0 4px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--khaikal_gold);
+}
+
+.khaikal_menu_list > .khaikal_menu_subtitle:first-child {
+    margin-top: 0;
+}
+
+.khaikal_menu_note {
+    padding: 24px 0 0;
+}
+
+/* ---------- Poster: menempel saat scroll, bisa digeser ---------- */
+.khaikal_menu_posters {
+    position: sticky;
+    top: 110px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 12px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--khaikal_gold) transparent;
+}
+
+.khaikal_menu_poster {
+    flex: 0 0 88%;
+    width: auto;
+    scroll-snap-align: start;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Kalau posternya hanya satu, penuh selebar kolom */
+.khaikal_menu_poster:only-child {
+    flex-basis: 100%;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 992px) {
+    .khaikal_menu_group_body {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .khaikal_menu_posters {
+        position: static;
+        order: -1;
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .khaikal_menu_group {
+        margin-bottom: 80px;
+    }
+
+    .khaikal_menu_group_head {
+        margin-bottom: 40px;
+    }
+}
+/* =====================================================
+   TAHAP 7: HALAMAN COFFEE STORE
+   ===================================================== */
+
+.khaikal_store_section {
+    padding: 80px 0 70px;
+    background-color: var(--khaikal_dark_brown);
+}
+
+/* ---------- Filter produk ---------- */
+.khaikal_store_filter_bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.khaikal_store_count {
+    text-align: center;
+    font-size: 0.78rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--khaikal_beige);
+    margin-bottom: 46px;
+}
+
+/* ---------- Grid & kartu produk ---------- */
+.khaikal_product_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 28px;
+}
+
+.khaikal_product_card {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(74, 44, 26, 0.3);
+    border: 1px solid rgba(200, 169, 126, 0.22);
+    transition: opacity 0.8s ease, transform 0.4s ease, border-color 0.4s ease;
+}
+
+.khaikal_product_card:hover {
+    transform: translateY(-8px);
+    border-color: var(--khaikal_gold);
+}
+
+/* Area foto: logo sebagai pengganti sampai foto produk tersedia */
+.khaikal_product_media {
+    position: relative;
+    display: block;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 50% 35%, rgba(200, 169, 126, 0.22), transparent 60%),
+        linear-gradient(160deg, var(--khaikal_coffee), var(--khaikal_black));
+}
+
+.khaikal_product_placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.khaikal_product_placeholder img {
+    width: 84px;
+    height: auto;
+    opacity: 0.55;
+}
+
+.khaikal_product_photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.khaikal_product_card:hover .khaikal_product_photo {
+    transform: scale(1.06);
+}
+
+.khaikal_product_badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    padding: 5px 12px;
+    font-size: 0.64rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color: var(--khaikal_gold);
+    color: var(--khaikal_black);
+}
+
+/* ---------- Info produk ---------- */
+.khaikal_product_info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 22px 22px 24px;
+}
+
+.khaikal_product_cat {
+    font-size: 0.68rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--khaikal_gold);
+    margin-bottom: 6px;
+}
+
+.khaikal_product_name {
+    font-family: var(--khaikal_font_heading);
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 6px;
+}
+
+.khaikal_product_name a:hover {
+    color: var(--khaikal_gold);
+}
+
+.khaikal_product_meta {
+    font-size: 0.84rem;
+    color: var(--khaikal_beige);
+    margin-bottom: 12px;
+}
+
+.khaikal_product_price {
+    font-family: var(--khaikal_font_heading);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--khaikal_gold);
+    margin-bottom: 20px;
+}
+
+.khaikal_product_actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+/* ---------- Tombol kecil ---------- */
+.khaikal_btn_small {
+    flex: 1;
+    text-align: center;
+    padding: 11px 10px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: 1px solid var(--khaikal_gold);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.khaikal_btn_small_fill {
+    background-color: var(--khaikal_gold);
+    color: var(--khaikal_black);
+}
+
+.khaikal_btn_small_fill:hover {
+    background-color: transparent;
+    color: var(--khaikal_gold);
+}
+
+.khaikal_btn_small_line {
+    background-color: transparent;
+    color: var(--khaikal_cream);
+}
+
+.khaikal_btn_small_line:hover {
+    background-color: var(--khaikal_gold);
+    color: var(--khaikal_black);
+}
+
+.khaikal_store_note {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 0.82rem;
+    font-style: italic;
+    color: rgba(217, 199, 167, 0.7);
+}
+
+.khaikal_order_steps {
+    background-color: var(--khaikal_black);
+}
+
+@media (max-width: 576px) {
+    .khaikal_store_section {
+        padding: 60px 0 50px;
+    }
+
+    .khaikal_product_grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .khaikal_product_media {
+        aspect-ratio: 4 / 3;
+    }
+}
+
+
+/* =====================================================
+   TAHAP 8: HALAMAN PRODUCT DETAIL
+   ===================================================== */
+
+.khaikal_detail_section {
+    padding: 140px 0 90px;
+    background-color: var(--khaikal_dark_brown);
+}
+
+.khaikal_detail_section .khaikal_breadcrumb {
+    margin-bottom: 36px;
+}
+
+.khaikal_detail_section .khaikal_breadcrumb a:hover {
+    color: var(--khaikal_cream);
+}
+
+@keyframes khaikal_fade_up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.khaikal_detail_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: start;
+    animation: khaikal_fade_up 0.8s ease both;
+}
+
+/* ---------- Foto ---------- */
+.khaikal_detail_gallery {
+    position: sticky;
+    top: 110px;
+}
+
+.khaikal_detail_photo {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border: 1px solid rgba(200, 169, 126, 0.3);
+    background:
+        radial-gradient(circle at 50% 35%, rgba(200, 169, 126, 0.22), transparent 60%),
+        linear-gradient(160deg, var(--khaikal_coffee), var(--khaikal_black));
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+.khaikal_detail_photo:hover .khaikal_product_photo {
+    transform: scale(1.04);
+}
+
+.khaikal_detail_caption {
+    margin-top: 12px;
+    font-size: 0.74rem;
+    font-style: italic;
+    color: rgba(217, 199, 167, 0.65);
+    text-align: center;
+}
+
+/* ---------- Informasi ---------- */
+.khaikal_detail_title {
+    font-family: var(--khaikal_font_heading);
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 6px 0 14px;
+}
+
+.khaikal_detail_price {
+    font-family: var(--khaikal_font_heading);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--khaikal_gold);
+    margin-bottom: 18px;
+}
+
+.khaikal_detail_desc {
+    color: var(--khaikal_beige);
+    font-size: 0.98rem;
+    margin-bottom: 28px;
+}
+
+.khaikal_detail_label {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--khaikal_gold);
+    margin-bottom: 12px;
+}
+
+.khaikal_detail_chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.khaikal_detail_chip {
+    padding: 7px 16px;
+    font-size: 0.8rem;
+    color: var(--khaikal_cream);
+    border: 1px solid rgba(200, 169, 126, 0.45);
+    background-color: rgba(74, 44, 26, 0.35);
+}
+
+.khaikal_detail_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 32px;
+}
+
+.khaikal_detail_table th,
+.khaikal_detail_table td {
+    padding: 13px 0;
+    text-align: left;
+    vertical-align: top;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(200, 169, 126, 0.18);
+}
+
+.khaikal_detail_table tr:last-child th,
+.khaikal_detail_table tr:last-child td {
+    border-bottom: 1px solid rgba(200, 169, 126, 0.18);
+}
+
+.khaikal_detail_table th {
+    width: 130px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--khaikal_gold);
+}
+
+.khaikal_detail_table td {
+    color: var(--khaikal_cream);
+}
+
+/* ---------- Jumlah dan total ---------- */
+.khaikal_detail_buy {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 28px;
+    margin-bottom: 28px;
+}
+
+.khaikal_qty {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--khaikal_gold);
+}
+
+.khaikal_qty_btn {
+    width: 46px;
+    height: 46px;
+    background: transparent;
+    border: none;
+    color: var(--khaikal_gold);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.khaikal_qty_btn:hover {
+    background-color: var(--khaikal_gold);
+    color: var(--khaikal_black);
+}
+
+.khaikal_qty_value {
+    min-width: 54px;
+    text-align: center;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.khaikal_detail_total {
+    font-size: 0.9rem;
+    color: var(--khaikal_beige);
+}
+
+.khaikal_detail_total strong {
+    font-family: var(--khaikal_font_heading);
+    font-size: 1.4rem;
+    color: var(--khaikal_cream);
+    margin-left: 6px;
+}
+
+.khaikal_detail_actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.khaikal_detail_note {
+    font-size: 0.78rem;
+    font-style: italic;
+    color: rgba(217, 199, 167, 0.65);
+}
+
+.khaikal_detail_empty {
+    text-align: center;
+    padding: 80px 0;
+}
+
+.khaikal_detail_empty p {
+    color: var(--khaikal_beige);
+    margin: 14px 0 30px;
+}
+
+.khaikal_related_section {
+    background-color: var(--khaikal_black);
+}
+
+@media (max-width: 992px) {
+    .khaikal_detail_grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .khaikal_detail_gallery {
+        position: static;
+        max-width: 460px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .khaikal_detail_section {
+        padding: 120px 0 70px;
+    }
+
+    .khaikal_detail_actions .khaikal_btn {
+        width: 100%;
+    }
+
+    .khaikal_detail_table th {
+        width: 100px;
+    }
+}
+/* =====================================================
+   TAHAP 9: HALAMAN CYCLING EVENT (tempel di paling bawah)
+   ===================================================== */
+
+/* ---------- Jadwal kegiatan ---------- */
+.khaikal_event_schedule {
+    padding: 110px 0;
+    background-color: var(--khaikal_black);
+}
+
+.khaikal_schedule_list {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.khaikal_schedule_item {
+    display: flex;
+    align-items: flex-start;
+    gap: 34px;
+    padding: 34px 0;
+    border-top: 1px solid rgba(200, 169, 126, 0.25);
+}
+
+.khaikal_schedule_item:last-child {
+    border-bottom: 1px solid rgba(200, 169, 126, 0.25);
+}
+
+.khaikal_schedule_no {
+    flex: 0 0 auto;
+    font-family: var(--khaikal_font_heading);
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--khaikal_gold);
+    opacity: 0.6;
+}
+
+.khaikal_schedule_body h3 {
+    font-family: var(--khaikal_font_heading);
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.khaikal_schedule_body p {
+    color: var(--khaikal_beige);
+    font-size: 0.94rem;
+}
+
+.khaikal_schedule_body .khaikal_schedule_meta {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    color: var(--khaikal_gold);
+}
+
+.khaikal_schedule_note {
+    margin-top: 34px;
+    text-align: center;
+    font-size: 0.84rem;
+    font-style: italic;
+    color: rgba(217, 199, 167, 0.75);
+}
+
+/* ---------- Dokumentasi ---------- */
+.khaikal_event_gallery {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 24px;
+    height: 640px;
+}
+
+.khaikal_event_photo {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    border: 1px solid rgba(200, 169, 126, 0.25);
+    background-color: var(--khaikal_black);
+}
+
+.khaikal_event_photo_big {
+    grid-row: 1 / span 2;
+}
+
+.khaikal_event_photo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.9s ease;
+}
+
+.khaikal_event_photo:hover img {
+    transform: scale(1.05);
+}
+
+.khaikal_docs_more {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--khaikal_beige);
+}
+
+/* ---------- Cara bergabung ---------- */
+.khaikal_join_section {
+    background-color: var(--khaikal_dark_brown);
+}
+
+.khaikal_join_buttons {
+    margin-top: 50px;
+}
+
+/* ---------- Sewa tempat & live music ---------- */
+.khaikal_event_venue {
+    padding: 110px 0;
+    background-color: var(--khaikal_black);
+}
+
+.khaikal_venue_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.khaikal_venue_photo {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    min-height: 500px;
+    border: 1px solid rgba(200, 169, 126, 0.25);
+}
+
+.khaikal_venue_photo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.9s ease;
+}
+
+.khaikal_venue_photo:hover img {
+    transform: scale(1.05);
+}
+
+.khaikal_venue_text p {
+    color: var(--khaikal_beige);
+    margin-bottom: 16px;
+    font-size: 0.97rem;
+}
+
+.khaikal_venue_text .khaikal_venue_note {
+    font-style: italic;
+    color: var(--khaikal_gold);
+    margin-bottom: 26px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 992px) {
+    .khaikal_event_gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        height: auto;
+    }
+
+    .khaikal_event_photo,
+    .khaikal_event_photo_big {
+        grid-row: auto;
+        height: 320px;
+    }
+
+    .khaikal_event_photo_big {
+        grid-column: 1 / -1;
+        height: 420px;
+    }
+
+    .khaikal_venue_grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .khaikal_venue_photo {
+        min-height: 360px;
+    }
+}
+
+@media (max-width: 576px) {
+    .khaikal_event_schedule,
+    .khaikal_event_venue {
+        padding: 80px 0;
+    }
+
+    .khaikal_schedule_item {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .khaikal_event_gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .khaikal_event_photo,
+    .khaikal_event_photo_big {
+        grid-column: auto;
+        height: 300px;
+    }
+}
+/* =====================================================
+   TAHAP 10: HALAMAN GALLERY + LIGHTBOX (tempel di paling bawah)
+   ===================================================== */
+
+.khaikal_gallery_section {
+    padding: 80px 0 90px;
+    background-color: var(--khaikal_dark_brown);
+}
+
+/* ---------- Grid masonry ---------- */
+.khaikal_gallery_grid {
+    column-count: 3;
+    column-gap: 20px;
+}
+
+.khaikal_gallery_item {
+    position: relative;
+    display: block;
+    margin: 0 0 20px;
+    overflow: hidden;
+    break-inside: avoid;
+    border: 1px solid rgba(200, 169, 126, 0.25);
+    background-color: var(--khaikal_black);
+}
+
+.khaikal_gallery_btn {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: zoom-in;
+    font-family: inherit;
+}
+
+.khaikal_gallery_btn img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.9s ease, filter 0.5s ease;
+}
+
+.khaikal_gallery_item:hover .khaikal_gallery_btn img {
+    transform: scale(1.06);
+    filter: brightness(0.7);
+}
+
+/* Keterangan muncul saat kursor diarahkan */
+.khaikal_gallery_cap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 46px 18px 16px;
+    text-align: left;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: var(--khaikal_cream);
+    background: linear-gradient(to top, rgba(13, 8, 6, 0.9), rgba(13, 8, 6, 0));
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.khaikal_gallery_item:hover .khaikal_gallery_cap {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Di layar sentuh (HP), keterangan selalu terlihat */
+@media (hover: none) {
+    .khaikal_gallery_cap {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.khaikal_gallery_note {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.84rem;
+    font-style: italic;
+    color: rgba(217, 199, 167, 0.75);
+}
+
+/* ---------- Lightbox ---------- */
+.khaikal_no_scroll {
+    overflow: hidden;
+}
+
+.khaikal_lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(13, 8, 6, 0.95);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.khaikal_lightbox.khaikal_lightbox_open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.khaikal_lightbox_figure {
+    max-width: 92vw;
+    margin: 0;
+    text-align: center;
+}
+
+.khaikal_lightbox_img {
+    display: block;
+    max-width: 92vw;
+    max-height: 78vh;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid rgba(200, 169, 126, 0.35);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.7);
+}
+
+.khaikal_lightbox_caption {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: var(--khaikal_cream);
+}
+
+.khaikal_lightbox_count {
+    font-size: 0.74rem;
+    letter-spacing: 3px;
+    color: var(--khaikal_gold);
+}
+
+.khaikal_lightbox_close,
+.khaikal_lightbox_nav {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(13, 8, 6, 0.6);
+    border: 1px solid rgba(200, 169, 126, 0.5);
+    color: var(--khaikal_gold);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.khaikal_lightbox_close:hover,
+.khaikal_lightbox_nav:hover {
+    background-color: var(--khaikal_gold);
+    color: var(--khaikal_black);
+}
+
+.khaikal_lightbox_close {
+    top: 22px;
+    right: 22px;
+    width: 46px;
+    height: 46px;
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.khaikal_lightbox_nav {
+    top: 50%;
+    width: 52px;
+    height: 52px;
+    margin-top: -26px;
+    font-size: 2.2rem;
+    line-height: 1;
+}
+
+.khaikal_lightbox_prev {
+    left: 22px;
+}
+
+.khaikal_lightbox_next {
+    right: 22px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 992px) {
+    .khaikal_gallery_grid {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 576px) {
+    .khaikal_gallery_section {
+        padding: 60px 0 70px;
+    }
+
+    .khaikal_gallery_grid {
+        column-count: 1;
+    }
+
+    .khaikal_lightbox_nav {
+        top: auto;
+        bottom: 26px;
+        margin-top: 0;
+        width: 46px;
+        height: 46px;
+    }
+
+    .khaikal_lightbox_prev {
+        left: 22px;
+    }
+
+    .khaikal_lightbox_next {
+        right: 22px;
+    }
+
+    .khaikal_lightbox_img {
+        max-height: 68vh;
+    }
+}
+
+/* =====================================================
+   TAHAP 11: HALAMAN CONTACT + TOMBOL WHATSAPP
+   ===================================================== */
+
+.khaikal_contact_section {
+    padding: 100px 0;
+    background-color: var(--khaikal_dark_brown);
+}
+
+.khaikal_contact_grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* ---------- Kartu informasi ---------- */
+.khaikal_contact_info .khaikal_story_title {
+    margin-bottom: 30px;
+}
+
+.khaikal_contact_card {
+    padding: 24px 26px;
+    margin-bottom: 18px;
+    border-left: 2px solid var(--khaikal_gold);
+    background-color: rgba(74, 44, 26, 0.3);
+}
+
+.khaikal_contact_label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--khaikal_gold);
+}
+
+.khaikal_contact_card p {
+    color: var(--khaikal_beige);
+    font-size: 0.93rem;
+    margin-bottom: 10px;
+}
+
+.khaikal_contact_card p:last-child {
+    margin-bottom: 0;
+}
+
+/* ---------- Formulir ---------- */
+.khaikal_contact_formwrap {
+    padding: 42px 38px;
+    border: 1px solid rgba(200, 169, 126, 0.3);
+    background-color: rgba(13, 8, 6, 0.55);
+}
+
+.khaikal_form_title {
+    font-family: var(--khaikal_font_heading);
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.khaikal_form_intro {
+    color: var(--khaikal_beige);
+    font-size: 0.9rem;
+    margin-bottom: 28px;
+}
+
+.khaikal_form_group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.khaikal_form_row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.khaikal_form_group label {
+    margin-bottom: 8px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--khaikal_gold);
+}
+
+.khaikal_form_group label small {
+    text-transform: none;
+    letter-spacing: 0;
+    color: rgba(217, 199, 167, 0.65);
+}
+
+.khaikal_form_group input,
+.khaikal_form_group select,
+.khaikal_form_group textarea {
+    width: 100%;
+    padding: 13px 15px;
+    font-family: var(--khaikal_font_body);
+    font-size: 0.92rem;
+    color: var(--khaikal_cream);
+    background-color: rgba(26, 15, 10, 0.9);
+    border: 1px solid rgba(200, 169, 126, 0.35);
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.khaikal_form_group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.khaikal_form_group select option {
+    background-color: var(--khaikal_dark_brown);
+    color: var(--khaikal_cream);
+}
+
+.khaikal_form_group input::placeholder,
+.khaikal_form_group textarea::placeholder {
+    color: rgba(217, 199, 167, 0.45);
+}
+
+.khaikal_form_group input:focus,
+.khaikal_form_group select:focus,
+.khaikal_form_group textarea:focus {
+    border-color: var(--khaikal_gold);
+    box-shadow: 0 0 0 3px rgba(200, 169, 126, 0.18);
+}
+
+/* Status error */
+.khaikal_field_invalid {
+    border-color: #d9674f !important;
+}
+
+.khaikal_form_error {
+    min-height: 1.1em;
+    margin-top: 6px;
+    font-size: 0.76rem;
+    color: #e8836c;
+}
+
+.khaikal_form_meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.khaikal_form_counter {
+    margin-top: 6px;
+    font-size: 0.72rem;
+    color: rgba(217, 199, 167, 0.6);
+    white-space: nowrap;
+}
+
+.khaikal_form_submit {
+    width: 100%;
+    margin-top: 6px;
+}
+
+.khaikal_form_success {
+    display: none;
+    margin-top: 20px;
+    padding: 16px 18px;
+    font-size: 0.88rem;
+    color: var(--khaikal_cream);
+    border: 1px solid var(--khaikal_gold);
+    background-color: rgba(200, 169, 126, 0.12);
+}
+
+.khaikal_form_success.khaikal_form_success_show {
+    display: block;
+}
+
+/* ---------- Peta ---------- */
+.khaikal_map_section {
+    background-color: var(--khaikal_black);
+}
+
+.khaikal_map_frame {
+    position: relative;
+    height: 440px;
+    overflow: hidden;
+    border: 1px solid rgba(200, 169, 126, 0.3);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+.khaikal_map_frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: grayscale(0.35) contrast(0.95);
+}
+
+.khaikal_map_note {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 0.86rem;
+    color: var(--khaikal_beige);
+}
+
+/* ---------- Tombol WhatsApp mengambang ---------- */
+.khaikal_wa_float {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 20px 13px 16px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #1fa855;
+    border-radius: 50px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.khaikal_wa_float:hover {
+    transform: translateY(-4px);
+    background-color: #25c364;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 992px) {
+    .khaikal_contact_grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    .khaikal_contact_section {
+        padding: 70px 0;
+    }
+
+    .khaikal_contact_formwrap {
+        padding: 30px 20px;
+    }
+
+    .khaikal_form_row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .khaikal_map_frame {
+        height: 340px;
+    }
+
+    .khaikal_wa_float {
+        right: 16px;
+        bottom: 16px;
+        padding: 13px;
+    }
+
+    .khaikal_wa_float_text {
+        display: none;
+    }
+}

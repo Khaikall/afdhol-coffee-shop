@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Menu Afdhol Coffee Shop: Nusantara Food, Western Food, Snack & Dessert, dan kopi.">
+    <title>Coffee Menu | Afdhol Coffee Shop</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="khaikal_body">
+
+    <!-- ===== HEADER / NAVBAR ===== -->
+    <header id="khaikal_header">
+        <nav class="khaikal_navbar">
+            <a href="index.html" class="khaikal_logo_link">
+                <img src="assets/images/logo.png" alt="Logo Afdhol Coffee Shop" class="khaikal_logo_img">
+                <span class="khaikal_logo_wrap">
+                    <span class="khaikal_logo_text">AFDHOL</span>
+                    <span class="khaikal_logo_sub">COFFEE SHOP</span>
+                </span>
+            </a>
+
+            <button id="khaikal_hamburger" class="khaikal_hamburger" aria-label="Buka menu" aria-expanded="false">
+                <span class="khaikal_hamburger_line"></span>
+                <span class="khaikal_hamburger_line"></span>
+                <span class="khaikal_hamburger_line"></span>
+            </button>
+
+            <ul id="khaikal_nav_menu" class="khaikal_nav_menu">
+                <li><a href="index.html" class="khaikal_nav_link">Home</a></li>
+                <li><a href="about.html" class="khaikal_nav_link">About Us</a></li>
+                <li><a href="menu.html" class="khaikal_nav_link khaikal_active">Coffee Menu</a></li>
+                <li><a href="store.html" class="khaikal_nav_link">Coffee Store</a></li>
+                <li><a href="event.html" class="khaikal_nav_link">Cycling Event</a></li>
+                <li><a href="gallery.html" class="khaikal_nav_link">Gallery</a></li>
+                <li><a href="contact.html" class="khaikal_nav_link khaikal_nav_cta">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ===== PAGE HERO ===== -->
+        <section id="khaikal_page_hero" class="khaikal_page_hero">
+            <img src="assets/images/cafe/suasana_taman_malam.jpg" alt="Suasana Afdhol Coffee Shop" class="khaikal_page_hero_img">
+            <div class="khaikal_page_hero_overlay"></div>
+            <div class="khaikal_page_hero_content">
+                <p class="khaikal_breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Coffee Menu</p>
+                <h1 class="khaikal_page_title">Our <span class="khaikal_gold_text">Menu</span></h1>
+                <p class="khaikal_page_subtitle">Dari hidangan Nusantara, western, hingga camilan dan kopi untuk menemani harimu.</p>
+            </div>
+        </section>
+
+        <!-- ===== DAFTAR MENU ===== -->
+        <section id="khaikal_menu_section" class="khaikal_menu_section">
+            <div class="khaikal_container">
+
+                <!-- Filter kategori -->
+                <div class="khaikal_filter_bar" id="khaikal_menu_filter">
+                    <button type="button" class="khaikal_filter_btn khaikal_filter_active" data-filter="all">Semua</button>
+                    <button type="button" class="khaikal_filter_btn" data-filter="nusantara">Nusantara Food</button>
+                    <button type="button" class="khaikal_filter_btn" data-filter="western">Western Food</button>
+                    <button type="button" class="khaikal_filter_btn" data-filter="snack">Snack &amp; Dessert</button>
+                    <button type="button" class="khaikal_filter_btn" data-filter="coffee">Coffee</button>
+                </div>
+
+                <!-- ===== NUSANTARA FOOD ===== -->
+                <div class="khaikal_menu_group khaikal_filter_item" data-category="nusantara">
+                    <div class="khaikal_menu_group_head">
+                        <p class="khaikal_menu_group_eyebrow">Afdhol Menu</p>
+                        <h2 class="khaikal_menu_group_title">Nusantara Food</h2>
+                    </div>
+                    <div class="khaikal_menu_group_body">
+                        <div class="khaikal_menu_list">
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Ayam Betutu <span class="khaikal_menu_tag">Khas Bali</span></h3>
+                                <p class="khaikal_menu_item_desc">Bumbu rempah yang meresap dan aroma menggugah selera, disajikan bersama nasi putih hangat, sambal matah, serta lalapan untuk cita rasa autentik yang kaya.</p>
+                            </article>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Ayam Bakar Rica</h3>
+                                <p class="khaikal_menu_item_desc">Ayam bakar rica dengan baluran sambal pedas khas yang menggugah selera, disajikan bersama nasi putih hangat, lalapan, dan sambal pelengkap.</p>
+                            </article>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Nasi Goreng Oriental</h3>
+                                <p class="khaikal_menu_item_desc">Nasi goreng oriental dengan cita rasa gurih khas, disajikan bersama udang utuh yang segar, lalapan renyah, acar, dan kerupuk putih.</p>
+                            </article>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Nasi Goreng Sapi</h3>
+                                <p class="khaikal_menu_item_desc">Nasi goreng sapi dengan cita rasa gurih khas, disajikan bersama irisan daging sapi empuk, acar segar, lalapan, dan kerupuk.</p>
+                            </article>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Sop Iga</h3>
+                                <p class="khaikal_menu_item_desc">Sop iga dengan kuah bening hangat dan daging iga empuk, disajikan bersama nasi putih, kerupuk, sambal, dan lalapan segar.</p>
+                            </article>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Iga Bakar Rica</h3>
+                                <p class="khaikal_menu_item_desc">Iga bakar rica dengan daging empuk berbalut sambal pedas, disajikan bersama nasi putih hangat, lalapan segar, dan sambal pendamping.</p>
+                            </article>
+                        </div>
+                        <div class="khaikal_menu_posters">
+                            <figure class="khaikal_menu_poster khaikal_reveal">
+                                <img src="assets/images/menu/menu_nusantara_1.jpeg" alt="Poster menu Nusantara Food: Ayam Betutu dan Ayam Bakar Rica" loading="lazy">
+                            </figure>
+                            <figure class="khaikal_menu_poster khaikal_reveal">
+                                <img src="assets/images/menu/menu_nusantara_2.jpeg" alt="Poster menu Nusantara Food: Nasi Goreng Oriental dan Nasi Goreng Sapi" loading="lazy">
+                            </figure>
+                            <figure class="khaikal_menu_poster khaikal_reveal">
+                                <img src="assets/images/menu/menu_nusantara_3.jpeg" alt="Poster menu Nusantara Food: Sop Iga dan Iga Bakar Rica" loading="lazy">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== WESTERN FOOD ===== -->
+                <div class="khaikal_menu_group khaikal_filter_item" data-category="western">
+                    <div class="khaikal_menu_group_head">
+                        <p class="khaikal_menu_group_eyebrow">Afdhol Menu</p>
+                        <h2 class="khaikal_menu_group_title">Western Food</h2>
+                    </div>
+                    <div class="khaikal_menu_group_body">
+                        <div class="khaikal_menu_list">
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Chicken Cordon Bleu</h3>
+                                <p class="khaikal_menu_item_desc">Renyah berisi keju dan daging asap, disajikan dengan kentang goreng, lalapan segar, dan saus pendamping.</p>
+                            </article>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Chicken Steak</h3>
+                                <p class="khaikal_menu_item_desc">Panggang yang juicy, disajikan dengan kentang goreng, lalapan segar, dan saus pendamping.</p>
+                            </article>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Tenderloin Steak</h3>
+                                <p class="khaikal_menu_item_desc">Tenderloin steak empuk dan juicy, disajikan dengan kentang goreng, salad segar, dan saus gurih.</p>
+                            </article>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Sirloin Steak</h3>
+                                <p class="khaikal_menu_item_desc">Sirloin steak panggang yang juicy, disajikan dengan kentang goreng, salad segar, dan saus pendamping.</p>
+                            </article>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Spaghetti Aglio Olio</h3>
+                                <p class="khaikal_menu_item_desc">Dengan irisan daging, sentuhan cabai, dan minyak bawang putih, disajikan bersama lalapan segar.</p>
+                            </article>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Spaghetti Carbonara</h3>
+                                <p class="khaikal_menu_item_desc">Spaghetti carbonara dengan saus creamy gurih, disajikan bersama irisan daging asap dan lalapan segar.</p>
+                            </article>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Spaghetti Beef Stroganoff</h3>
+                                <p class="khaikal_menu_item_desc">Spaghetti beef stroganoff dengan potongan daging, saus gurih, dan sayuran, disajikan bersama lalapan segar.</p>
+                            </article>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Zuppa Soup</h3>
+                                <p class="khaikal_menu_item_desc">Hangat dengan puff pastry renyah keemasan yang menutup mangkuk, gurih dan menggugah selera.</p>
+                            </article>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Pizza Pepperoni</h3>
+                                <p class="khaikal_menu_item_desc">Dengan keju leleh melimpah, irisan pepperoni dan paprika, disajikan hangat di atas papan kayu.</p>
+                            </article>
+                            <p class="khaikal_menu_note khaikal_reveal"><strong>Pilihan saus steak:</strong> Blackpepper, Mushroom, Barbeque</p>
+                        </div>
+                        <div class="khaikal_menu_posters">
+                            <figure class="khaikal_menu_poster khaikal_reveal">
+                                <img src="assets/images/menu/menu_western.jpeg" alt="Poster menu Western Food: Chicken Cordon Bleu, Chicken Steak, Tenderloin Steak, Sirloin Steak" loading="lazy">
+                            </figure>
+                            <figure class="khaikal_menu_poster khaikal_reveal">
+                                <img src="assets/images/menu/menu_western_2.jpeg" alt="Poster menu Western Food: Spaghetti, Zuppa Soup, dan Pizza Pepperoni" loading="lazy">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== SNACK & DESSERT ===== -->
+                <div class="khaikal_menu_group khaikal_filter_item" data-category="snack">
+                    <div class="khaikal_menu_group_head">
+                        <p class="khaikal_menu_group_eyebrow">Afdhol Menu</p>
+                        <h2 class="khaikal_menu_group_title">Snack &amp; Dessert</h2>
+                    </div>
+                    <div class="khaikal_menu_group_body">
+                        <div class="khaikal_menu_list">
+
+                            <h3 class="khaikal_menu_subtitle">Snack</h3>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Afdhol Mix Platter</h3>
+                                <p class="khaikal_menu_item_desc">Berisi aneka camilan gurih dalam satu piring, chicken wings berbumbu, kentang goreng renyah, sosis goreng, dan tortilla chips, disajikan dengan pilihan saus yang lezat untuk dinikmati bersama.</p>
+                            </article>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Kentang Sosis</h3>
+                                <p class="khaikal_menu_item_desc">Kentang goreng renyah dengan sosis gurih berbentuk unik, disajikan hangat lengkap dengan saus pendamping yang lezat.</p>
+                            </article>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Tahu Cabe Garam</h3>
+                                <p class="khaikal_menu_item_desc">Tahu goreng renyah dengan taburan cabe dan bawang yang gurih pedas, disajikan hangat bersama saus cocolan yang menggugah selera.</p>
+                            </article>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Dimsum Afdhol</h3>
+                                <p class="khaikal_menu_item_desc">4 pcs dimsum lembut yang disajikan hangat, dengan pilihan varian topping add on mozzarella atau mentai yang creamy dan gurih, dilengkapi saus pendamping.</p>
+                            </article>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">French Fries</h3>
+                                <p class="khaikal_menu_item_desc">Renyah berwarna keemasan, disajikan hangat dengan taburan bumbu ringan dan saus cocolan yang siap menambah kenikmatan di setiap gigitan.</p>
+                            </article>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Cireng Rujak</h3>
+                                <p class="khaikal_menu_item_desc">Cireng renyah di luar dan kenyal di dalam, disajikan hangat dengan cocolan rujak pedas, manis &amp; gurih yang pas untuk camilan santai.</p>
+                            </article>
+
+                            <h3 class="khaikal_menu_subtitle">Dessert</h3>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Afdhol Pastry Berry</h3>
+                                <p class="khaikal_menu_item_desc">Puff pastry renyah, topping krim lembut, buah segar, dan saus manis yang menyegarkan.</p>
+                            </article>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Pisang Keju</h3>
+                                <p class="khaikal_menu_item_desc">Pisang goreng crispy disajikan dengan saus cokelat, taburan keju parut, dan potongan stroberi segar.</p>
+                            </article>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Cheese Pastry Fruit</h3>
+                                <p class="khaikal_menu_item_desc">Cheese pastry lembut dengan topping buah segar, saus creamy, dan sentuhan manis-asam yang menyegarkan.</p>
+                            </article>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Banana Split</h3>
+                                <p class="khaikal_menu_item_desc">Banana split segar dengan pisang manis, tiga scoop es krim lembut, saus cokelat, taburan meses, dan topping stroberi.</p>
+                            </article>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Tape Goreng</h3>
+                                <p class="khaikal_menu_item_desc">Tape goreng renyah disajikan dengan saus cokelat, taburan keju, potongan stroberi, dan satu scoop es krim vanilla.</p>
+                            </article>
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Donat</h3>
+                                <p class="khaikal_menu_item_desc">Donat empuk bertabur gula halus, disajikan dengan saus cokelat leleh dan topping potongan stroberi dan pisang.</p>
+                            </article>
+                        </div>
+                        <div class="khaikal_menu_posters">
+                            <figure class="khaikal_menu_poster khaikal_reveal">
+                                <img src="assets/images/menu/menu_snack_gurih.jpeg" alt="Poster menu Snack Afdhol: Mix Platter, Kentang Sosis, Tahu Cabe Garam, Dimsum, French Fries, Cireng Rujak" loading="lazy">
+                            </figure>
+                            <figure class="khaikal_menu_poster khaikal_reveal">
+                                <img src="assets/images/menu/menu_snack_dessert.jpeg" alt="Poster menu Snack dan Dessert Afdhol: Pastry, Pisang Keju, Banana Split, Tape Goreng, Donat" loading="lazy">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== COFFEE ===== -->
+                <div class="khaikal_menu_group khaikal_filter_item" data-category="coffee">
+                    <div class="khaikal_menu_group_head">
+                        <p class="khaikal_menu_group_eyebrow">Afdhol Menu</p>
+                        <h2 class="khaikal_menu_group_title">Coffee</h2>
+                    </div>
+                    <div class="khaikal_menu_group_body">
+                        <div class="khaikal_menu_list">
+                            <article class="khaikal_menu_item khaikal_reveal">
+                                <h3 class="khaikal_menu_item_name">Butterscotch Coffee</h3>
+                                <p class="khaikal_menu_item_desc">Creamy dengan lapisan foam lembut dan taburan butterscotch di atasnya, disajikan dingin dan menyegarkan.</p>
+                            </article>
+                            <p class="khaikal_menu_note khaikal_reveal">Menu minuman kopi lainnya bisa ditanyakan langsung ke kami lewat halaman <a href="contact.html" class="khaikal_card_link">Contact</a>.</p>
+                        </div>
+                        <div class="khaikal_menu_posters">
+                            <figure class="khaikal_menu_poster khaikal_reveal">
+                                <img src="assets/images/menu/menu_butterscotch.jpeg" alt="Poster Butterscotch Coffee Afdhol" loading="lazy">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== AJAKAN ===== -->
+        <section id="khaikal_cta" class="khaikal_cta_band">
+            <div class="khaikal_container">
+                <h2 class="khaikal_cta_title">Ingin Membawa Pulang Kopinya?</h2>
+                <p class="khaikal_cta_text">Lihat kopi kemasan dan biji kopi pilihan Afdhol di Coffee Store.</p>
+                <div class="khaikal_hero_buttons">
+                    <a href="store.html" class="khaikal_btn khaikal_btn_primary">Ke Coffee Store</a>
+                    <a href="contact.html" class="khaikal_btn khaikal_btn_outline">Hubungi Kami</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="khaikal_footer">
+        <div class="khaikal_container">
+            <div class="khaikal_footer_top">
+                <div class="khaikal_footer_brand">
+                    <img src="assets/images/logo.png" alt="Logo Afdhol Coffee Shop" class="khaikal_footer_logo">
+                    <span class="khaikal_logo_text">AFDHOL</span>
+                    <span class="khaikal_logo_sub">COFFEE SHOP</span>
+                    <p>Specialty coffee dan cycling lifestyle.</p>
+                </div>
+
+                <div class="khaikal_footer_links">
+                    <h4>Jelajahi</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="menu.html">Coffee Menu</a>
+                    <a href="store.html">Coffee Store</a>
+                </div>
+
+                <div class="khaikal_footer_links">
+                    <h4>Komunitas</h4>
+                    <a href="event.html">Cycling Event</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="https://www.instagram.com/afdhol.coffee/" target="_blank" rel="noopener">Instagram</a>
+                </div>
+            </div>
+
+            <div class="khaikal_footer_credit">
+                <p class="khaikal_credit_main">Website ini dibuat sebagai proyek Ujian Tengah Semester (UTS) mata kuliah Pemrograman Internet.</p>
+                <p class="khaikal_credit_detail">
+                    Muhammad Khaikal Maulana &bull; NIM 2403010144 &bull; Teknik Informatika
+                </p>
+                <p class="khaikal_credit_copy">&copy; 2026 Afdhol Coffee Shop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

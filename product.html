@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detail produk Afdhol Coffee Shop: foto, harga, berat, dan karakter rasa.">
+    <title>Detail Produk | Afdhol Coffee Shop</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="khaikal_body">
+
+    <!-- ===== HEADER / NAVBAR ===== -->
+    <header id="khaikal_header">
+        <nav class="khaikal_navbar">
+            <a href="index.html" class="khaikal_logo_link">
+                <img src="assets/images/logo.png" alt="Logo Afdhol Coffee Shop" class="khaikal_logo_img">
+                <span class="khaikal_logo_wrap">
+                    <span class="khaikal_logo_text">AFDHOL</span>
+                    <span class="khaikal_logo_sub">COFFEE SHOP</span>
+                </span>
+            </a>
+
+            <button id="khaikal_hamburger" class="khaikal_hamburger" aria-label="Buka menu" aria-expanded="false">
+                <span class="khaikal_hamburger_line"></span>
+                <span class="khaikal_hamburger_line"></span>
+                <span class="khaikal_hamburger_line"></span>
+            </button>
+
+            <ul id="khaikal_nav_menu" class="khaikal_nav_menu">
+                <li><a href="index.html" class="khaikal_nav_link">Home</a></li>
+                <li><a href="about.html" class="khaikal_nav_link">About Us</a></li>
+                <li><a href="menu.html" class="khaikal_nav_link">Coffee Menu</a></li>
+                <li><a href="store.html" class="khaikal_nav_link khaikal_active">Coffee Store</a></li>
+                <li><a href="event.html" class="khaikal_nav_link">Cycling Event</a></li>
+                <li><a href="gallery.html" class="khaikal_nav_link">Gallery</a></li>
+                <li><a href="contact.html" class="khaikal_nav_link khaikal_nav_cta">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ===== DETAIL PRODUK ===== -->
+        <section id="khaikal_product_detail" class="khaikal_detail_section">
+            <div class="khaikal_container">
+                <p class="khaikal_breadcrumb">
+                    <a href="index.html">Home</a> &nbsp;/&nbsp;
+                    <a href="store.html">Coffee Store</a> &nbsp;/&nbsp;
+                    <span id="khaikal_crumb_name">Produk</span>
+                </p>
+
+                <!-- Isi dibuat otomatis oleh js/script.js -->
+                <div id="khaikal_product_view"></div>
+            </div>
+        </section>
+
+        <!-- ===== PRODUK LAINNYA ===== -->
+        <section id="khaikal_related" class="khaikal_section khaikal_related_section">
+            <div class="khaikal_container">
+                <p class="khaikal_section_eyebrow">You May Also Like</p>
+                <h2 class="khaikal_section_title">Produk Lainnya</h2>
+                <div class="khaikal_product_grid" id="khaikal_related_grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="khaikal_footer">
+        <div class="khaikal_container">
+            <div class="khaikal_footer_top">
+                <div class="khaikal_footer_brand">
+                    <img src="assets/images/logo.png" alt="Logo Afdhol Coffee Shop" class="khaikal_footer_logo">
+                    <span class="khaikal_logo_text">AFDHOL</span>
+                    <span class="khaikal_logo_sub">COFFEE SHOP</span>
+                    <p>Specialty coffee dan cycling lifestyle.</p>
+                </div>
+
+                <div class="khaikal_footer_links">
+                    <h4>Jelajahi</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="menu.html">Coffee Menu</a>
+                    <a href="store.html">Coffee Store</a>
+                </div>
+
+                <div class="khaikal_footer_links">
+                    <h4>Komunitas</h4>
+                    <a href="event.html">Cycling Event</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="https://www.instagram.com/afdhol.coffee/" target="_blank" rel="noopener">Instagram</a>
+                </div>
+            </div>
+
+            <div class="khaikal_footer_credit">
+                <p class="khaikal_credit_main">Website ini dibuat sebagai proyek Ujian Tengah Semester (UTS) mata kuliah Pemrograman Internet.</p>
+                <p class="khaikal_credit_detail">
+                    Muhammad Khaikal Maulana &bull; NIM 2403010144 &bull; Teknik Informatika
+                </p>
+                <p class="khaikal_credit_copy">&copy; 2026 Afdhol Coffee Shop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

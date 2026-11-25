@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galeri Afdhol Coffee Shop: suasana cafe, komunitas ACC, menu, dan produk kopi.">
+    <title>Gallery | Afdhol Coffee Shop</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="khaikal_body">
+
+    <!-- ===== HEADER / NAVBAR ===== -->
+    <header id="khaikal_header">
+        <nav class="khaikal_navbar">
+            <a href="index.html" class="khaikal_logo_link">
+                <img src="assets/images/logo.png" alt="Logo Afdhol Coffee Shop" class="khaikal_logo_img">
+                <span class="khaikal_logo_wrap">
+                    <span class="khaikal_logo_text">AFDHOL</span>
+                    <span class="khaikal_logo_sub">COFFEE SHOP</span>
+                </span>
+            </a>
+
+            <button id="khaikal_hamburger" class="khaikal_hamburger" aria-label="Buka menu" aria-expanded="false">
+                <span class="khaikal_hamburger_line"></span>
+                <span class="khaikal_hamburger_line"></span>
+                <span class="khaikal_hamburger_line"></span>
+            </button>
+
+            <ul id="khaikal_nav_menu" class="khaikal_nav_menu">
+                <li><a href="index.html" class="khaikal_nav_link">Home</a></li>
+                <li><a href="about.html" class="khaikal_nav_link">About Us</a></li>
+                <li><a href="menu.html" class="khaikal_nav_link">Coffee Menu</a></li>
+                <li><a href="store.html" class="khaikal_nav_link">Coffee Store</a></li>
+                <li><a href="event.html" class="khaikal_nav_link">Cycling Event</a></li>
+                <li><a href="gallery.html" class="khaikal_nav_link khaikal_active">Gallery</a></li>
+                <li><a href="contact.html" class="khaikal_nav_link khaikal_nav_cta">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ===== PAGE HERO ===== -->
+        <section id="khaikal_page_hero" class="khaikal_page_hero">
+            <img src="assets/images/cafe/suasana_taman_malam.jpg" alt="Suasana taman Afdhol Coffee Shop di malam hari" class="khaikal_page_hero_img">
+            <div class="khaikal_page_hero_overlay"></div>
+            <div class="khaikal_page_hero_content">
+                <p class="khaikal_breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Gallery</p>
+                <h1 class="khaikal_page_title">Our <span class="khaikal_gold_text">Gallery</span></h1>
+                <p class="khaikal_page_subtitle">Suasana, komunitas, menu, dan produk dalam satu galeri. Klik foto untuk memperbesar.</p>
+            </div>
+        </section>
+
+        <!-- ===== GALERI ===== -->
+        <section id="khaikal_gallery_section" class="khaikal_gallery_section">
+            <div class="khaikal_container">
+
+                <!-- Filter kategori -->
+                <div class="khaikal_filter_bar" id="khaikal_gallery_filter">
+                    <button type="button" class="khaikal_filter_btn khaikal_filter_active" data-filter="all">Semua</button>
+                    <button type="button" class="khaikal_filter_btn" data-filter="cafe">Suasana Cafe</button>
+                    <button type="button" class="khaikal_filter_btn" data-filter="acc">ACC &amp; Komunitas</button>
+                    <button type="button" class="khaikal_filter_btn" data-filter="menu">Menu</button>
+                    <button type="button" class="khaikal_filter_btn" data-filter="produk">Produk</button>
+                </div>
+
+                <div class="khaikal_gallery_grid" id="khaikal_gallery_grid">
+
+                    <!-- ===== SUASANA CAFE ===== -->
+                    <figure class="khaikal_gallery_item khaikal_filter_item" data-category="cafe">
+                        <button type="button" class="khaikal_gallery_btn" data-src="assets/images/cafe/suasana_taman_malam.jpg" data-caption="Lorong bambu dan taman terbuka di malam hari">
+                            <img src="assets/images/cafe/suasana_taman_malam.jpg" alt="Lorong bambu dan taman terbuka Afdhol di malam hari" loading="lazy">
+                            <span class="khaikal_gallery_cap">Lorong bambu dan taman terbuka</span>
+                        </button>
+                    </figure>
+
+                    <figure class="khaikal_gallery_item khaikal_filter_item" data-category="cafe">
+                        <button type="button" class="khaikal_gallery_btn" data-src="assets/images/cafe/komunitas_tribun.jpg" data-caption="Tribun beton, tempat santai ditemani si kucing">
+                            <img src="assets/images/cafe/komunitas_tribun.jpg" alt="Pengunjung bersantai di tribun beton Afdhol bersama seekor kucing" loading="lazy">
+                            <span class="khaikal_gallery_cap">Tribun beton dan si kucing</span>
+                        </button>
+                    </figure>
+
+                    <!-- ===== ACC & KOMUNITAS ===== -->
+                    <figure class="khaikal_gallery_item khaikal_filter_item" data-category="acc">
+                        <button type="button" class="khaikal_gallery_btn" data-src="assets/images/event/event_kumpul.jpeg" data-caption="Foto bersama peserta night ride bertema kostum">
+                            <img src="assets/images/event/event_kumpul.jpeg" alt="Foto bersama peserta event sepeda Afdhol Cycling Club" loading="lazy">
+                            <span class="khaikal_gallery_cap">Foto bersama peserta night ride</span>
+                        </button>
+                    </figure>
+
+                    <figure class="khaikal_gallery_item khaikal_filter_item" data-category="acc">
+                        <button type="button" class="khaikal_gallery_btn" data-src="assets/images/event/event_kostum.jpeg" data-caption="Kostum seru di tengah perjalanan">
+                            <img src="assets/images/event/event_kostum.jpeg" alt="Dua pesepeda berkostum pada event sepeda malam hari" loading="lazy">
+                            <span class="khaikal_gallery_cap">Kostum seru di tengah perjalanan</span>
+                        </button>
+                    </figure>
+
+                    <figure class="khaikal_gallery_item khaikal_filter_item" data-category="acc">
+                        <button type="button" class="khaikal_gallery_btn" data-src="assets/images/event/event_konvoi.jpeg" data-caption="Rombongan Afdhol Cycling Club siap berangkat">
+                            <img src="assets/images/event/event_konvoi.jpeg" alt="Rombongan Afdhol Cycling Club berkumpul di malam hari" loading="lazy">
+                            <span class="khaikal_gallery_cap">Rombongan ACC siap berangkat</span>
+                        </button>
+                    </figure>
+
+                    <!-- ===== MENU ===== -->
+                    <figure class="khaikal_gallery_item khaikal_filter_item" data-category="menu">
+                        <button type="button" class="khaikal_gallery_btn" data-src="assets/images/menu/menu_ayam_betutu.jpeg" data-caption="Ayam Betutu Khas Bali">
+                            <img src="assets/images/menu/menu_ayam_betutu.jpeg" alt="Poster menu Ayam Betutu Khas Bali" loading="lazy">
+                            <span class="khaikal_gallery_cap">Ayam Betutu Khas Bali</span>
+                        </button>
+                    </figure>
+
+                    <figure class="khaikal_gallery_item khaikal_filter_item" data-category="menu">
+                        <button type="button" class="khaikal_gallery_btn" data-src="assets/images/menu/menu_sop_iga.jpeg" data-caption="Sop Iga">
+                            <img src="assets/images/menu/menu_sop_iga.jpeg" alt="Poster menu Sop Iga" loading="lazy">
+                            <span class="khaikal_gallery_cap">Sop Iga</span>
+                        </button>
+                    </figure>
+
+                    <figure class="khaikal_gallery_item khaikal_filter_item" data-category="menu">
+                        <button type="button" class="khaikal_gallery_btn" data-src="assets/images/menu/menu_butterscotch.jpeg" data-caption="Butterscotch Coffee">
+                            <img src="assets/images/menu/menu_butterscotch.jpeg" alt="Poster Butterscotch Coffee" loading="lazy">
+                            <span class="khaikal_gallery_cap">Butterscotch Coffee</span>
+                        </button>
+                    </figure>
+
+                    <figure class="khaikal_gallery_item khaikal_filter_item" data-category="menu">
+                        <button type="button" class="khaikal_gallery_btn" data-src="assets/images/menu/menu_snack_dessert.jpeg" data-caption="Snack &amp; Dessert">
+                            <img src="assets/images/menu/menu_snack_dessert.jpeg" alt="Poster menu Snack dan Dessert" loading="lazy">
+                            <span class="khaikal_gallery_cap">Snack &amp; Dessert</span>
+                        </button>
+                    </figure>
+
+                    <!-- ===== PRODUK ===== -->
+                    <figure class="khaikal_gallery_item khaikal_filter_item" data-category="produk">
+                        <button type="button" class="khaikal_gallery_btn" data-src="assets/images/produk/house_blend.jpg" data-caption="Afdhol House Blend (foto ilustrasi)">
+                            <img src="assets/images/produk/house_blend.jpg" alt="Kemasan Afdhol House Blend" loading="lazy">
+                            <span class="khaikal_gallery_cap">Afdhol House Blend</span>
+                        </button>
+                    </figure>
+
+                    <figure class="khaikal_gallery_item khaikal_filter_item" data-category="produk">
+                        <button type="button" class="khaikal_gallery_btn" data-src="assets/images/produk/arabica_biji.jpg" data-caption="Arabica Biji Kopi (foto ilustrasi)">
+                            <img src="assets/images/produk/arabica_biji.jpg" alt="Kemasan Arabica Biji Kopi dengan biji kopi" loading="lazy">
+                            <span class="khaikal_gallery_cap">Arabica Biji Kopi</span>
+                        </button>
+                    </figure>
+
+                    <figure class="khaikal_gallery_item khaikal_filter_item" data-category="produk">
+                        <button type="button" class="khaikal_gallery_btn" data-src="assets/images/produk/robusta_biji.jpg" data-caption="Robusta Biji Kopi (foto ilustrasi)">
+                            <img src="assets/images/produk/robusta_biji.jpg" alt="Kemasan Robusta Biji Kopi" loading="lazy">
+                            <span class="khaikal_gallery_cap">Robusta Biji Kopi</span>
+                        </button>
+                    </figure>
+
+                    <figure class="khaikal_gallery_item khaikal_filter_item" data-category="produk">
+                        <button type="button" class="khaikal_gallery_btn" data-src="assets/images/produk/arabica_bubuk.jpg" data-caption="Arabica Kopi Bubuk (foto ilustrasi)">
+                            <img src="assets/images/produk/arabica_bubuk.jpg" alt="Kemasan Arabica Kopi Bubuk" loading="lazy">
+                            <span class="khaikal_gallery_cap">Arabica Kopi Bubuk</span>
+                        </button>
+                    </figure>
+
+                    <figure class="khaikal_gallery_item khaikal_filter_item" data-category="produk">
+                        <button type="button" class="khaikal_gallery_btn" data-src="assets/images/produk/drip_bag.jpg" data-caption="Afdhol Drip Bag (foto ilustrasi)">
+                            <img src="assets/images/produk/drip_bag.jpg" alt="Kemasan Afdhol Drip Bag" loading="lazy">
+                            <span class="khaikal_gallery_cap">Afdhol Drip Bag</span>
+                        </button>
+                    </figure>
+
+                    <figure class="khaikal_gallery_item khaikal_filter_item" data-category="produk">
+                        <button type="button" class="khaikal_gallery_btn" data-src="assets/images/produk/blend_biji.jpg" data-caption="Afdhol Blend Biji Kopi (foto ilustrasi)">
+                            <img src="assets/images/produk/blend_biji.jpg" alt="Kemasan Afdhol Blend Biji Kopi" loading="lazy">
+                            <span class="khaikal_gallery_cap">Afdhol Blend Biji Kopi</span>
+                        </button>
+                    </figure>
+
+                </div>
+
+                <p class="khaikal_gallery_note">Foto produk bersifat ilustrasi. Lebih banyak dokumentasi ada di Instagram
+                    <a href="https://www.instagram.com/afdhol.coffee/" target="_blank" rel="noopener" class="khaikal_card_link">@afdhol.coffee</a>.</p>
+            </div>
+        </section>
+
+        <!-- ===== AJAKAN ===== -->
+        <section id="khaikal_cta" class="khaikal_cta_band">
+            <div class="khaikal_container">
+                <h2 class="khaikal_cta_title">Suka dengan Suasananya?</h2>
+                <p class="khaikal_cta_text">Datang langsung ke Afdhol, atau hubungi kami untuk bertanya.</p>
+                <div class="khaikal_hero_buttons">
+                    <a href="menu.html" class="khaikal_btn khaikal_btn_primary">Lihat Menu</a>
+                    <a href="contact.html" class="khaikal_btn khaikal_btn_outline">Hubungi Kami</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <div id="khaikal_lightbox" class="khaikal_lightbox" aria-hidden="true" role="dialog" aria-label="Pratinjau foto">
+        <button type="button" id="khaikal_lightbox_close" class="khaikal_lightbox_close" aria-label="Tutup">&times;</button>
+        <button type="button" id="khaikal_lightbox_prev" class="khaikal_lightbox_nav khaikal_lightbox_prev" aria-label="Foto sebelumnya">&#8249;</button>
+        <button type="button" id="khaikal_lightbox_next" class="khaikal_lightbox_nav khaikal_lightbox_next" aria-label="Foto berikutnya">&#8250;</button>
+        <figure class="khaikal_lightbox_figure">
+            <img id="khaikal_lightbox_img" class="khaikal_lightbox_img" src="" alt="">
+            <figcaption class="khaikal_lightbox_caption">
+                <span id="khaikal_lightbox_text"></span>
+                <span id="khaikal_lightbox_count" class="khaikal_lightbox_count"></span>
+            </figcaption>
+        </figure>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="khaikal_footer">
+        <div class="khaikal_container">
+            <div class="khaikal_footer_top">
+                <div class="khaikal_footer_brand">
+                    <img src="assets/images/logo.png" alt="Logo Afdhol Coffee Shop" class="khaikal_footer_logo">
+                    <span class="khaikal_logo_text">AFDHOL</span>
+                    <span class="khaikal_logo_sub">COFFEE SHOP</span>
+                    <p>Specialty coffee dan cycling lifestyle.</p>
+                </div>
+
+                <div class="khaikal_footer_links">
+                    <h4>Jelajahi</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="menu.html">Coffee Menu</a>
+                    <a href="store.html">Coffee Store</a>
+                </div>
+
+                <div class="khaikal_footer_links">
+                    <h4>Komunitas</h4>
+                    <a href="event.html">Cycling Event</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="https://www.instagram.com/afdhol.coffee/" target="_blank" rel="noopener">Instagram</a>
+                </div>
+            </div>
+
+            <div class="khaikal_footer_credit">
+                <p class="khaikal_credit_main">Website ini dibuat sebagai proyek Ujian Tengah Semester (UTS) mata kuliah Pemrograman Internet.</p>
+                <p class="khaikal_credit_detail">
+                    Muhammad Khaikal Maulana &bull; NIM 2403010144 &bull; Teknik Informatika
+                </p>
+                <p class="khaikal_credit_copy">&copy; 2026 Afdhol Coffee Shop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
